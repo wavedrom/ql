@@ -16,8 +16,10 @@ data
 
 Hierarchy navigation
 
+Change current location in the hierarchy with the path string:
+
 ```
-/testbetch/top/cpu
+/testbetch/top/cpu/
 clk
 pc
 addr
