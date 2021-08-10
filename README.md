@@ -18,7 +18,7 @@ data
 
 Change current location in the hierarchy with the path string:
 
-```
+```js
 /testbetch/top/u_cpu0
 clk
 pc
@@ -31,7 +31,7 @@ addr
 
 # Grouping
 
-Foldable group can be created Lisp stype
+Foldable group can be created with parentheses.
 
 ```
 (foo
