@@ -43,9 +43,9 @@ addr
 | analog | 'a | 'sa |
 
 ```js
-data's <- signed decimal
-addr'h <- unsigned hex
-wen'b <- unsigned binary
+data'sd
+addr'h
+wen'b
 ```
 ## Grouping
 
