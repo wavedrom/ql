@@ -29,7 +29,7 @@ pc
 addr
 ```
 
-## Number base
+## Value format
 
 `<signal name>'<sign><base>`
 
