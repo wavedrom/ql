@@ -33,8 +33,7 @@ addr
 
 `<signal name>'<sign><base>`
 
-A = 0x0723
-B = 0xFF05
+A = 0x0723; B = 0xFF05
 
 | format | base | signed | A      | A3  | A2  | A1 | B                | B3  | B2  | B1  |
 |-|-|-|-|-|-|-|-|-|-|-|
