@@ -1,7 +1,7 @@
 [![NPM version](https://img.shields.io/npm/v/waveql.svg)](https://www.npmjs.org/package/waveql)
-[![Linux](https://github.com/wavedrom/waveql/actions/workflows/linux.yml/badge.svg)](https://github.com/wavedrom/waveql/actions/workflows/linux.yml)
-[![MacOS](https://github.com/wavedrom/waveql/actions/workflows/macos.yml/badge.svg)](https://github.com/wavedrom/waveql/actions/workflows/macos.yml)
-[![Windows](https://github.com/wavedrom/waveql/actions/workflows/windows.yml/badge.svg)](https://github.com/wavedrom/waveql/actions/workflows/windows.yml)
+[![Linux](https://github.com/wavedrom/ql/actions/workflows/linux.yml/badge.svg)](https://github.com/wavedrom/ql/actions/workflows/linux.yml)
+[![MacOS](https://github.com/wavedrom/ql/actions/workflows/macos.yml/badge.svg)](https://github.com/wavedrom/ql/actions/workflows/macos.yml)
+[![Windows](https://github.com/wavedrom/ql/actions/workflows/windows.yml/badge.svg)](https://github.com/wavedrom/ql/actions/workflows/windows.yml)
 
 Waveform Query Language
 
