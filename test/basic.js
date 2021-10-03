@@ -6,16 +6,22 @@ const lib = require('../lib/index.js');
 const expect = chai.expect;
 
 const examplo = {
-  'foo bar': {
+  'foo bar baz': {
     src: `
+
 foo
   bar
+
  baz
 `,
     res: [
-      'foo',
-      'bar',
-      'baz'
+      {},
+      {},
+      {id: 'foo', path: []},
+      {id: 'bar', path: []},
+      {},
+      {id: 'baz', path: []},
+      {}
     ]
   }
 };

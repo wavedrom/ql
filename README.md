@@ -1,4 +1,7 @@
-# WaveQL
+[![NPM version](https://img.shields.io/npm/v/waveql.svg)](https://www.npmjs.org/package/waveql)
+[![Linux](https://github.com/wavedrom/waveql/actions/workflows/linux.yml/badge.svg)](https://github.com/wavedrom/waveql/actions/workflows/linux.yml)
+[![MacOS](https://github.com/wavedrom/waveql/actions/workflows/macos.yml/badge.svg)](https://github.com/wavedrom/waveql/actions/workflows/macos.yml)
+[![Windows](https://github.com/wavedrom/waveql/actions/workflows/windows.yml/badge.svg)](https://github.com/wavedrom/waveql/actions/workflows/windows.yml)
 
 Waveform Query Language
 
@@ -6,7 +9,7 @@ Waveform Query Language
 
 * one text line -> one wave
 * it is just a signal name by default
-
+* indentation space ignored
 
 ```
 clock
