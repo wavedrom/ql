@@ -6,22 +6,28 @@ const lib = require('../lib/index.js');
 const expect = chai.expect;
 
 const examplo = {
-  'foo bar baz': {
+  'foo bar baz ...': {
     src: `
 
 foo
-  bar
+  ./bar
+  ./bar/baz
 
- baz
+  dir/
+./fuz
+ ../../bam
 `,
     res: [
-      {},
-      {},
-      {id: 'foo', path: []},
-      {id: 'bar', path: []},
-      {},
-      {id: 'baz', path: []},
-      {}
+      {kind: 'empty',  path: []},
+      {kind: 'empty',  path: []},
+      {kind: 'signal', path: [], id: 'foo'},
+      {kind: 'signal', path: [], id: 'bar'},
+      {kind: 'signal', path: ['bar'], id: 'baz'},
+      {kind: 'empty',  path: ['bar']},
+      {kind: 'empty',  path: ['bar', 'dir']},
+      {kind: 'signal', path: ['bar', 'dir'], id: 'fuz'},
+      {kind: 'signal', path: [], id: 'bam'},
+      {kind: 'empty',  path: []}
     ]
   }
 };
