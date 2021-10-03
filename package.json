@@ -1,0 +1,38 @@
+{
+  "name": "waveql",
+  "version": "0.1.0",
+  "description": "Waveform Query Language",
+  "homepage": "https://github.com/wavedrom/ql#readme",
+  "author": "Aliaksei Chapyzhenka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wavedrom/ql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wavedrom/ql/issues"
+  },
+  "main": "./lib",
+  "unpkg": "waveql.unpkg.min.js",
+  "files": [
+    "waveql.unpkg.min.js"
+  ],
+  "scripts": {
+    "test": "eslint lib",
+    "unpkg": "browserify --standalone waveql lib/index.js > waveql.unpkg.js",
+    "unpkg.min": "terser --compress --mengle -- waveql.unpkg.js > waveql.unpkg.min.js",
+    "prepare": "npm run unpkg && npm run unpkg.min"
+  },
+  "devDependencies": {
+    "@drom/eslint-config": "^0.10.0",
+    "browserify": "^17.0",
+    "eslint": "^7.32",
+    "terser": "^5.9"
+  },
+  "eslintConfig": {
+    "extends": "@drom/eslint-config/eslint4/node8",
+    "parserOptions": {
+      "ecmaVersion": 2020
+    }
+  }
+}
