@@ -19,7 +19,7 @@
     "waveql.unpkg.min.js"
   ],
   "scripts": {
-    "test": "npm run eslint && mocha test && npm run nyc",
+    "test": "npm run eslint && mocha --inline-diffs test && npm run nyc",
     "eslint": "eslint lib test",
     "nyc": "nyc -r=lcov -r=text mocha test",
     "unpkg": "browserify --standalone waveql lib/index.js > waveql.unpkg.js",
