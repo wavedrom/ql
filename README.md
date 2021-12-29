@@ -35,12 +35,22 @@ addr
 
 ## Grouping
 
-Foldable group can be created with parentheses.
+Foldable group can be created with indentation.
+
+Noname group
 
 ```
-(foo
-bar
-baz)
+@
+  bar
+  baz
+```
+
+Named group
+
+```
+@foo
+  bar
+  baz
 ```
 
 ## Value format string syntax
@@ -94,21 +104,28 @@ A = 0x0723; B = 0xFF05
 
 | format | base | signed | A      | A3  | A2  | A1 | B                | B3  | B2  | B1  |
 |-|-|-|-|-|-|-|-|-|-|-|
-| %b  | 2       |  | 11100100011  | …11 | …1  | … | 1111111100000101  | …11 | …1  | … |
-| %o  | 8       |  | 3443         | …43 | …3  | … | 177405            | …05 | …5  | … |
-| %d  | 10      |  | 1827         | …27 | …7  | … | 65285             | …85 | …5  | … |
-| %h  | 16      |  | 723          | 723 | …3  | … | ff05              | …05 | …5  | … |
-| %a  | analog  |  |              |     |     |   |                   |     |     |   |
-| %sb | 2       |v | 11100100011  | …11 | +   | + | -11111011         | -…1 | -   | - |
-| %so | 8       |v | 3443         | …43 | +   | + | -373              | -…2 | -   | - |
-| %sd | 10      |v | 1827         | …27 | +   | + | -251              | -…1 | -   | - |
-| %sh | 16      |v | 723          | 723 | +   | + | -fb               | -fb | -   | - |
-| %sa | analog  |v |              |     |     |   |                   |     |     |   |
+| 'b  | 2       |  | 11100100011  | …11 | …1  | … | 1111111100000101  | …11 | …1  | … |
+| 'o  | 8       |  | 3443         | …43 | …3  | … | 177405            | …05 | …5  | … |
+| 'd  | 10      |  | 1827         | …27 | …7  | … | 65285             | …85 | …5  | … |
+| 'h  | 16      |  | 723          | 723 | …3  | … | ff05              | …05 | …5  | … |
+| 'a  | analog  |  |              |     |     |   |                   |     |     |   |
+| 'sb | 2       |v | 11100100011  | …11 | +   | + | -11111011         | -…1 | -   | - |
+| 'so | 8       |v | 3443         | …43 | +   | + | -373              | -…2 | -   | - |
+| 'sd | 10      |v | 1827         | …27 | +   | + | -251              | -…1 | -   | - |
+| 'sh | 16      |v | 723          | 723 | +   | + | -fb               | -fb | -   | - |
+| 'sa | analog  |v |              |     |     |   |                   |     |     |   |
 
 ```js
-data%sd
-addr%h
-wen%b
+data 'sd
+addr 'h
+wen 'b
 ```
 
 ### digit-separating underscores
+
+
+## Parser generator options
+
+* https://github.com/Chevrotain/chevrotain
+* https://github.com/jneen/parsimmon
+* https://github.com/harc/ohm
