@@ -35,22 +35,21 @@ addr
 
 ## Grouping
 
-Foldable group can be created with indentation.
+Foldable group can be created with parenthesis.
 
 Noname group
 
 ```
-@
-  bar
-  baz
+( bar
+baz )
 ```
 
 Named group
 
 ```
-@foo
+(foo
   bar
-  baz
+  baz )
 ```
 
 ## Value format string syntax
@@ -58,7 +57,7 @@ Named group
 Grammar for
 
 ```
-signal_string ::= signal_name ["'" format_spec]
+signal_string ::= signal_name WIGHTSPACE ["'" format_spec]
 format_spec   ::= [sign] base
 sign          ::= "s" | "u"
 base          ::= "b" | "o" | "d" | "h"
