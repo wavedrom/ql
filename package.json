@@ -18,6 +18,9 @@
     "lib",
     "waveql.unpkg.min.js"
   ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "test": "npm run eslint && mocha --inline-diffs test && npm run nyc",
     "eslint": "eslint lib test",
