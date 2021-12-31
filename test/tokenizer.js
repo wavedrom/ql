@@ -43,7 +43,7 @@ const failo = {
   'object': {}
 };
 
-describe('lexer', () => {
+describe('tokenizer', () => {
 
   Object.keys(testo).map(test => {
     it(test, () => {
