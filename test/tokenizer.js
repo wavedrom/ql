@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai');
-const lexer = require('../lib/lexer.js');
+const { tokenizer } = require('../lib');
 
 const expect = chai.expect;
 
@@ -48,9 +48,9 @@ describe('lexer', () => {
   Object.keys(testo).map(test => {
     it(test, () => {
       const val = testo[test];
-      const lxr = lexer(val.src);
+      const tokens = tokenizer(val.src);
       const res = [];
-      for (const token of lxr) {
+      for (const token of tokens) {
         res.push(token);
       }
       // console.log(res);
@@ -62,7 +62,7 @@ describe('lexer', () => {
     it('fail ' + test, () => {
       const val = failo[test];
       expect(() => {
-        lexer(val).next();
+        tokenizer(val).next();
       }).to.throw(TypeError, test);
     });
   });
