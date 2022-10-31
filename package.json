@@ -27,17 +27,31 @@
     "nyc": "nyc -r=lcov -r=text mocha test",
     "unpkg": "browserify --standalone waveql lib/index.js > waveql.unpkg.js",
     "unpkg.min": "terser --compress --mengle -- waveql.unpkg.js > waveql.unpkg.min.js",
-    "prepare": "npm run unpkg && npm run unpkg.min"
+    "prepare": "npm run unpkg && npm run unpkg.min",
+    "watch": "watchify ./lib/app.js -o app/main.js -v"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.3.0",
+    "@codemirror/commands": "^6.1.2",
+    "@codemirror/language": "^6.3.0",
+    "@codemirror/state": "^6.1.2",
+    "@codemirror/view": "^6.4.0",
+    "@lezer/highlight": "^1.1.2",
+    "lodash.get": "^4.4.2",
+    "style-mod": "^4.0.0",
+    "w3c-keyname": "^2.2.6"
   },
   "devDependencies": {
     "@drom/eslint-config": "^0.10.0",
-    "browserify": "^17.0",
-    "chai": "^4.3.4",
+    "browserify": "^17.0.0",
+    "chai": "^4.3.6",
     "coveralls": "^3.1.1",
-    "eslint": "^7.32",
-    "mocha": "^9.1",
+    "eslint": "^8.26.0",
+    "live-server": "^1.2.2",
+    "mocha": "^10.1.0",
     "nyc": "^15.1",
-    "terser": "^5.9"
+    "terser": "^5.15.1",
+    "watchify": "^4.0.0"
   },
   "eslintConfig": {
     "extends": "@drom/eslint-config/eslint4/node8",
