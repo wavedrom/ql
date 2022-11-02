@@ -57,7 +57,7 @@ Named group
 Grammar for
 
 ```
-signal_string ::= signal_name WIGHTSPACE ["'" format_spec]
+signal_string ::= signal_name WHITESPACE ["'" format_spec]
 format_spec   ::= [sign] base
 sign          ::= "s" | "u"
 base          ::= "b" | "o" | "d" | "h"
