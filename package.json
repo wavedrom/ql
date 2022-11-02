@@ -27,8 +27,10 @@
     "nyc": "nyc -r=lcov -r=text mocha test",
     "unpkg": "browserify --standalone waveql lib/index.js > waveql.unpkg.js",
     "unpkg.min": "terser --compress --mengle -- waveql.unpkg.js > waveql.unpkg.min.js",
-    "prepare": "npm run unpkg && npm run unpkg.min",
     "watch": "watchify ./lib/app.js -o app/main.js -v"
+  },
+  "_scripts": {
+    "prepare": "npm run unpkg && npm run unpkg.min"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.3.0",
