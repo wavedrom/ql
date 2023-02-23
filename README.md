@@ -12,25 +12,254 @@ Waveform Query Language
 * it is just a signal name by default
 * indentation space ignored
 
+
+## comments
+
+```cpp
+// comment
+# comment
+
+/*
+ multi line
+*/
+```
+
+## Expressions
+
+```ebnf
+signal_name ::= IDENT;
+primary_expr ::= LITERAL;
+               | IDENT
+               | `(` expr `)`;
+
+expr ::= primary_expr
+       | expr `[` INT `]`
+       | expr `[` INT `:` INT `]`
+       | expr `&` expr;
+
+```
+
+
+
+```
+// foo is 128 bit wide
+foo.trunc(64)
+foo[63:0]
+
+// foo is 16 bit wide
+foo.zext(32)
+foo[31:0] // shouldn't be able to slice beyond bounds
+32'(foo) // annoying to parse
+{16'b0, foo} // don't want the user to do maths
+
+foo.sext(32)
+$signed(foo)[31:0] // bad because interseting op is accidental implicit cast
+32's(foo) // annoying to parse, totally obscure, hates life
+{{16{foo[15]}, foo}} // are you kidding me?
+
+// foo is 32 bit
+foo.digital(hex)
+foo.analog().hex()
+```
+
+```
+32'h42 & data
+42.bin() & 1337.oct()
+
+```
+
+
+```
+display(valid);
+display(ready);
+
+display(addr);
+```
+
+```
+valid
+ready
+
+addr
+```
+
+```
+fn foo() {
+  display(valid);
+  display(ready);
+  bar();
+}
+
+fn bar() {
+  space();
+  display(addr);
+}
+
+foo(
+
+
+)
+```
+
+```
+fn foo() -> (signal, signal) {
+  return valid, signal;
+}
+
+foo(
+)
+```
+
+```
+fn foo() -> (signal, signal, comment, signal) {
+  return valid, ready.color(pink), "", addr;
+}
+
+fn foo() -> Wave {
+  return display(valid).color(pink).size(299).hex();
+}
+
+fn foo(valid, ready) -> Wave {
+  let wave: Wave = display(valid);
+  wave.addColorOverlay(orange, valid & !ready);
+  wave.addColorOverlay(green, valid & ready);
+  return wave;
+}
+```
+
+### bare signal names
+
 ```
 clock
 reset
 data
 ```
 
+### slicing / bit-select postfix
+
+```
+data[7]
+addr[7:0]
+(data & mask)[31:0] // 64 & 64 -> 32
+```
+
+### Concatenation
+
+```
+cat(foo, bar)  // easy to parse, obvious
+{foo, bar}
+```
+
+```
+foo
+{bar, bugu}
+// ----
+foo {bar, bugu}  // signal foo, signal {...}
+foo {bar, bugu}  // cd into foo, dig up {...}
+```
+
+```
+foo
+(bar)
+// ----
+foo (bar) // signal, signal
+foo (bar) // cd ...
+```
+
+```
+foo
+/bar
+---
+foo /bar // foo divided by bar
+foo /bar // cd foo
+```
+
+```
+fn dump_info(valid, ready) {
+  valid?;
+  ready?;
+  (valid & ready)?"fire";
+  (valid & !ready)?"stall";
+}
+```
+
+```
+dump_info(axi_valid, axi_ready) | valid waveform
+                                | ready waveform
+                                | fire waveform
+                                | stall waveform
+
+(dump_info arg1 arg2
+
+
+
+)
+
+(dump_info arg1 arg2)
+```
+
+```
+foo?; bar?; baz?; | waveform here
+                  | waveform here
+                  | waveform here
+```
+
+```
+foo               | waveform here
+bar               | waveform here
+baz               | waveform here
+```
+
+
+### urary / binary
+
+```
+foo & ~bar
+```
+
+### manage width?
+
+1) implicit cast?
+
+```
+data & mask
+```
+
+2) explicit cast
+
+```
+data[31:0] & mask // 32bit output
+```
+
+3)
+
+```
+(data & mask)[31:0] // 64 & 64 -> 32
+```
+
+
+## statements
+
+
+
 ## Hierarchy navigation
 
 Change current location in the hierarchy with the path string:
 
+idea: / ? tb ( ) ? tb { } ?
+
 ```js
-/testbetch/top/u_cpu0
+testbetch { top {
+u_cpu0 {
 clk
 pc
 addr
-../u_cpu1
+}
+u_cpu1 {
 clk
 pc
 addr
+}
 ```
 
 ## Grouping
