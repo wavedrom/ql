@@ -18,7 +18,7 @@ Waveform Query Language
 ```cpp
 // comment
 # comment
-
+; comment   WAL
 /*
  multi line
 */
@@ -135,6 +135,42 @@ reset
 data
 ```
 
+### brackets
+
+```
+[ ] -- slice / bit-select
+( ) -- expressions grouping (from C)
+{ } -- concat
+" " -- string
+' ' -- string , radix/format qualifier 16'hbeaf
+/ / -- RegEx, // comments, /* */
+< >
+| |
+```
+
+### simple expressions
+
+```
+valid & ! ready // Verilogish
+(valid & ! ready) // Verilogish
+(& valid (! ready)) // WAL
+:(& valid (! ready)) // WAL
+[& valid [! ready]] // TCL
+
+valid&!ready // Verilog
+valid&(!ready) // Verilog
+valid ready ! & // ??? FORTH
+```
+
+### non-unary/binaty
+
+```
+foo NOR bar // no-go such operator
+NOR(foo, bar) // Verilog
+(NOR foo bar) // WAL
+```
+
+
 ### slicing / bit-select postfix
 
 ```
@@ -143,10 +179,23 @@ addr[7:0]
 (data & mask)[31:0] // 64 & 64 -> 32
 ```
 
+```wal
+(slice data 7)
+(slice data 7 0)
+(slice (& data mask) 31 0)
+```
+
+### Width rules (Verilog-ish)
+
+```
+data & mask # 64 bit, 32 bit -> 64 bit
+```
+
 ### Concatenation
 
 ```
 cat(foo, bar)  // easy to parse, obvious
+(cat foo bar) # WAL
 {foo, bar}
 ```
 
