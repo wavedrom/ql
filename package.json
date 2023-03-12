@@ -19,7 +19,7 @@
     "waveql.unpkg.min.js"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "test": "npm run eslint && mocha --inline-diffs test && npm run nyc",
@@ -33,23 +33,23 @@
     "prepare": "npm run unpkg && npm run unpkg.min"
   },
   "dependencies": {
-    "@codemirror/autocomplete": "^6.3.0",
-    "@codemirror/commands": "^6.1.2",
-    "@codemirror/language": "^6.3.0",
-    "@codemirror/state": "^6.1.2",
-    "@codemirror/view": "^6.4.0",
-    "@lezer/highlight": "^1.1.2"
+    "@codemirror/autocomplete": "^6.4.2",
+    "@codemirror/commands": "^6.2.2",
+    "@codemirror/language": "^6.6.0",
+    "@codemirror/state": "^6.2.0",
+    "@codemirror/view": "^6.9.2",
+    "@lezer/highlight": "^1.1.3"
   },
   "devDependencies": {
     "@drom/eslint-config": "^0.10.0",
     "browserify": "^17.0.0",
     "chai": "^4.3.6",
     "coveralls": "^3.1.1",
-    "eslint": "^8.26.0",
+    "eslint": "^8.36.0",
     "live-server": "^1.2.2",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1",
-    "terser": "^5.15.1",
+    "terser": "^5.16.6",
     "watchify": "^4.0.0"
   },
   "eslintConfig": {
