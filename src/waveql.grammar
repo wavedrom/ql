@@ -1,0 +1,42 @@
+
+@tokens {
+  TimeStamp { '@' $[0-9]+ $[munpf]* $[s] ($[.] $[a-zA-Z0-9]+)* }
+  // HierChange { ( '...' | '..' | '.' | '/' )}
+  // Label { ':' $[a-zA-Z_0-9]+ }
+  // Brace { '{' ![}]+ '}' }
+  // Format { '%' $[<>^]? $[+-]? $[su]? $[bodhHac]+ }
+  // Identifier { $[a-zA-Z_0-9\[\]]+ }
+  LineComment { '//' ![\n]* }
+  space { $[ \t\n\r]+ }
+  // '(' ')'
+}
+
+@external tokens Identifier from "./tokens.js" {
+  varOther[@name=varOther]
+  varReg[@name=varReg]
+  varWire[@name=varWire]
+  scopeOther[@name=scopeOther]
+  scopeModule[@name=scopeModule]
+  hierChange[@name=hierChange]
+}
+
+expression {
+  TimeStamp |
+  // HierChange |
+  // Label |
+  // Brace |
+  // Format |
+  // Application { '(' expression* ')' }
+  varReg | varWire | varOther |
+  scopeModule | scopeOther |
+  hierChange
+}
+
+
+@top Program { expression* }
+
+@skip { space | LineComment }
+
+// @context trackScope from "./tokens.js"
+
+
