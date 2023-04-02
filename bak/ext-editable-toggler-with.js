@@ -9,7 +9,7 @@ const {keymap, EditorView} = require('@codemirror/view');
 const ediatableFlag = new Compartment;
 
 const toggleEditability = (eView) => {
-  console.log('toggleEditability');
+  // console.log('toggleEditability');
   const e = EditorView.editable;
   eView.dispatch({
     effects: [

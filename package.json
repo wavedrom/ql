@@ -22,7 +22,6 @@
     "node": ">=12"
   },
   "scripts": {
-    "build": "lezer-generator src/waveql.grammar --cjs --output lib/parser",
     "test": "npm run eslint && mocha --inline-diffs test && npm run nyc",
     "eslint": "eslint lib test",
     "nyc": "nyc -r=lcov -r=text mocha test",
@@ -38,14 +37,11 @@
     "@codemirror/commands": "^6.2.2",
     "@codemirror/language": "^6.6.0",
     "@codemirror/state": "^6.2.0",
-    "@codemirror/view": "^6.9.2",
-    "@lezer/common": "^1.0.2",
-    "@lezer/highlight": "^1.1.3",
-    "@lezer/lr": "^1.3.3"
+    "@codemirror/view": "^6.9.3",
+    "@lezer/highlight": "^1.1.4"
   },
   "devDependencies": {
     "@drom/eslint-config": "^0.10.0",
-    "@lezer/generator": "^1.2.2",
     "browserify": "^17.0.0",
     "chai": "^4.3.6",
     "coveralls": "^3.1.1",
