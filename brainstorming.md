@@ -391,3 +391,17 @@ wen 'b
 * https://github.com/Chevrotain/chevrotain
 * https://github.com/jneen/parsimmon
 * https://github.com/harc/ohm
+
+## Terms
+
+A [Concatenative programming language](https://en.wikipedia.org/wiki/Concatenative_programming_language) is a point-free computer programming language in which all expressions denote functions, and the juxtaposition of expressions denotes function composition.[1] Concatenative programming replaces function application, which is common in other programming styles, with function composition as the default way to build subroutines.
+
+[Tacit programming](https://en.wikipedia.org/wiki/Tacit_programming) also called *point-free style*, is a programming paradigm in which function definitions do not identify the arguments (or "points") on which they operate. Instead the definitions merely compose other functions, among which are combinators that manipulate the arguments.
+
+[Interactive development](https://concatenative.org/wiki/view/Interactive%20development) is where your language environment has access to the running program, and vice versa. This leads to shorter turn-around times and a more experimental coding style where new ideas and algorithms can be tested with little effort.
+
+[Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) (RPN), also known as reverse Łukasiewicz notation, Polish postfix notation or simply postfix notation, is a mathematical notation in which operators follow their operands, in contrast to Polish notation (PN), in which operators precede their operands. It does not need any parentheses as long as each operator has a fixed number of operands. The description "Polish" refers to the nationality of logician Jan Łukasiewicz,[1][2] who invented Polish notation in 1924.
+
+* concise
+
+WaveQL is a functional stack-based concatenative programming language. Or maybe it's just a fancy signal list.
