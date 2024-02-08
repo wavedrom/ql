@@ -30,17 +30,10 @@ base         ::= "b" | "o" | "d" | "h"
 
 ```
 b   base 2
-B   base 2, leading zeros
-
 o   base 8
-O   base 8, leading zeros
-
 d   base 10
-
 h   base 16, lower-case letters a-f
-H   base 16, lower-case letters A-F
-
-c   ASCII char string
+A   ASCII char string
 ```
 
 ### zero / sign extension
