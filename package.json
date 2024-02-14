@@ -26,7 +26,7 @@
     "eslint": "eslint lib test",
     "nyc": "nyc -r=lcov -r=text mocha test",
     "unpkg": "browserify --standalone waveql lib/index.js > waveql.unpkg.js",
-    "unpkg.min": "terser --compress --mengle -- waveql.unpkg.js > waveql.unpkg.min.js",
+    "unpkg.min": "terser --compress --mengle -- waveql.unpkg.js > waveql.unpkg.min.js"
   },
   "_scripts": {
     "prepare": "npm run unpkg && npm run unpkg.min"
