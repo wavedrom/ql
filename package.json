@@ -32,12 +32,12 @@
     "prepare": "npm run unpkg && npm run unpkg.min"
   },
   "dependencies": {
-    "@codemirror/autocomplete": "^6.12.0",
-    "@codemirror/commands": "^6.3.3",
-    "@codemirror/language": "^6.10.0",
-    "@codemirror/state": "^6.4.0",
-    "@codemirror/view": "^6.23.0",
-    "@lezer/highlight": "^1.2.0"
+    "@codemirror/autocomplete": "6.12.0",
+    "@codemirror/commands": "6.3.3",
+    "@codemirror/language": "6.10.0",
+    "@codemirror/state": "6.4.0",
+    "@codemirror/view": "6.23.0",
+    "@lezer/highlight": "1.2.0"
   },
   "devDependencies": {
     "@drom/eslint-config": "^0.12.0",
