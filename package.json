@@ -32,17 +32,17 @@
     "prepare": "npm run unpkg && npm run unpkg.min"
   },
   "dependencies": {
-    "@codemirror/autocomplete": "6.12.0",
-    "@codemirror/commands": "6.3.3",
-    "@codemirror/language": "6.10.7",
-    "@codemirror/state": "6.4.0",
-    "@codemirror/view": "6.23.0",
+    "@codemirror/autocomplete": "6.18.6",
+    "@codemirror/commands": "6.8.1",
+    "@codemirror/language": "6.11.2",
+    "@codemirror/state": "6.4.1",
+    "@codemirror/view": "6.35.2",
     "@lezer/highlight": "1.2.1"
   },
   "devDependencies": {
-    "@drom/eslint-config": "^0.12.0",
+    "@drom/eslint-config": "^0.13.0",
     "browserify": "^17.0.0",
-    "chai": "^4.5.0",
+    "chai": "^5.2.1",
     "coveralls": "^3.1.1",
     "eslint": "^8.57.1",
     "mocha": "^11.0.1",
@@ -52,6 +52,6 @@
     "watchify": "^4.0.0"
   },
   "eslintConfig": {
-    "extends": "@drom/eslint-config/eslint8/node12"
+    "extends": "@drom/eslint-config/eslint8/node22"
   }
 }
